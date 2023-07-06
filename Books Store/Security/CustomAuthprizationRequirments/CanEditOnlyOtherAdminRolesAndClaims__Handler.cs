@@ -1,12 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc.Filters;
-using Microsoft.CodeAnalysis.Differencing;
-using Newtonsoft.Json.Linq;
-using NLog.Filters;
-using NuGet.Configuration;
-using System.Data;
 using System.Security.Claims;
-using System.Security.Policy;
 
 namespace Books_Store.Security.CustomAuthprizationRequirments
 {

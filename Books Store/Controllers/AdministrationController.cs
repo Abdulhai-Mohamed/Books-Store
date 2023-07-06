@@ -1,20 +1,12 @@
-﻿using Books_Store.Models.RoleModels;
+﻿using Books_Store.Models.ClamisModels;
+using Books_Store.Models.RoleModels;
 using Books_Store.Models.UserModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis.Recommendations;
-using System.Drawing;
-using System.Dynamic;
-using System.Net.NetworkInformation;
-using System.Runtime.InteropServices;
-using System;
-using Microsoft.AspNetCore.Authorization;
-using System.Data;
-using System.Xml.Linq;
-using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Policy;
-using Books_Store.Models.ClamisModels;
+using System.Data;
+using System.Security.Claims;
 
 namespace Books_Store.Controllers
 {
@@ -40,7 +32,7 @@ namespace Books_Store.Controllers
         private readonly UserManager<ApplicationUser> userManager;
         private readonly ILogger<AdministrationController> logger;
 
-        public AdministrationController(RoleManager<IdentityRole> roleManager,UserManager<ApplicationUser> userManager, ILogger<AdministrationController> logger)
+        public AdministrationController(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> userManager, ILogger<AdministrationController> logger)
         {
             this.roleManager = roleManager;
             this.userManager = userManager;
@@ -141,7 +133,7 @@ namespace Books_Store.Controllers
                 }
             }
             return View(model);
-            }
+        }
 
 
         // This action responds to HttpPost and receives EditRoleModel

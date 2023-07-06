@@ -5,26 +5,29 @@
     ViewBag.Title = "User Login";
 }
 
-<h4 class="text-center">Note that the valdiation here done by clients side(not waiting for server side response after submit a request)<br>
+@*<h4 class="text-center">Note that the valdiation here done by clients side(not waiting for server side response after submit a request)<br>
         togther with serverside validation methods [validation attribute + validation tag helepers]</h4>
-
+*@
 <div class="row justify-content-center col-8 form-div p-5 m-auto px-md-0">
     
     
 
     <div class="col-12 text-center mb-5 ">
         <h4>Kindly Insert your Credentials login here</h4>
-        <h4>Pass: 11112345#aA</h4>
-    </div>
+     </div>
 
 
     <form method="post" enctype="multipart/form-data"  asp-controller="Account" asp-action="Login"
           class="  row  notStyled col-6 p-3    justify-content-center  ">
 
         <div class="">
-            <h5 style="    color: #191970" class=" text-center mb-5">Local login here</h5>
-            <h5 style="    color: #191970" class=" text-center mb-5">Local login here</h5>
-
+            <h5 style="    color: #191970" class=" text-center mb-3">Local login here</h5>
+            <h5 style="    color: #191970" class=" text-center ">
+               Super Admin credentials:
+          
+            </h5>
+            <h5 style="    color: #191970" class=" text-center ">test@abdo.com</h5>
+                <h5  style="    color: #191970" class=" text-center ">Pass: 11112345#aA</h5>
             <div class="row mb-3  justify-content-evenly">
                 <label class="col-md-3  col-sm-12 col-form-label mb-2 mb-md-0" asp-for="Email"></label>
                 <div class="col-md-7 col-sm-12 ">

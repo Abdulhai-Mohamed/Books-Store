@@ -1,45 +1,20 @@
-using Azure.Core;
-using Books_Store.Controllers;
 using Books_Store.Models.AuthorModels;
 using Books_Store.Models.EF_Core_DB_Models;
+using Books_Store.Models.SendEmailsModels;
+using Books_Store.Models.UserModels;
+using Books_Store.Security.CustomAuthprizationRequirments;
+using Books_Store.Security.CustomDataProtectorTokenProvider;
+using Books_Store.Security.EncryptionAndDecryption;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Options;
-using NLog.Extensions.Logging;
-using NuGet.Configuration;
-using System;
-using System.Diagnostics;
-using System.Drawing;
-using System.Numerics;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
-using static System.Net.Mime.MediaTypeNames;
-using System.Security.Policy;
-using static System.Net.WebRequestMethods;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System.Collections.Generic;
-using Books_Store.Models.UserModels;
-using System.Data;
-using static System.Reflection.Metadata.BlobBuilder;
-using System.Net;
-using System.Runtime.Intrinsics.X86;
-using System.Reflection.Metadata;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Authentication.Google;
-using Microsoft.AspNetCore.Authentication;
-using Books_Store.Security.CustomAuthprizationRequirments;
-using Books_Store.Security.CustomDataProtectorTokenProvider;
-using Books_Store.Security.EncryptionAndDecryption;
-using System.Threading;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using System.Timers;
-using Books_Store.Utilities;
-using Books_Store.Models.SendEmailsModels;
 using NLog;
-using NLog.Targets;
+using NLog.Extensions.Logging;
 using NLog.Web;
 
 
@@ -411,6 +386,7 @@ try
 
 
         //2-custom authorization Requirements
+        //this policy pass if any of its 2 handlers sucsced ( admin and can edit or super admin)
         AuthorizationOptions.AddPolicy("PolicyWithCustom_AUTH_Requirements", policy =>
                policy.AddRequirements(new ManageAdminRolesAndClaims__Requirement()));
 

@@ -109,7 +109,7 @@ namespace Books_Store.Controllers
                                $"<p>If you have any questions or concerns, please do not hesitate to contact us.</p>" +
                                $"<p>Best regards,<br>Abdul-Hai Mohamed</p>";
 
-                    await _emailService.SendEmailAsync(model.Email, "Confirm your Email", EmailMessageBody);
+                    //await _emailService.SendEmailAsync(model.Email, "Confirm your Email", EmailMessageBody);
 
                     //5-
                     // If there is already user is already signed in and in this user in Admin role, then it is

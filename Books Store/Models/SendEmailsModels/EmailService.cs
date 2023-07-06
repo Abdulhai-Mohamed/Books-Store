@@ -98,12 +98,13 @@ namespace Books_Store.Models.SendEmailsModels
 
             using (var client = new MailKit.Net.Smtp.SmtpClient())
             {
-                client.ServerCertificateValidationCallback = (s, c, h, e) => true; // This line is added to bypass certificate validation
+                //client.ServerCertificateValidationCallback = (s, c, h, e) => true; // This line is added to bypass certificate validation
 
                 client.Connect(_emailConfiguration.SmtpServer, _emailConfiguration.SmtpPort, SecureSocketOptions.StartTls);
                 client.Authenticate(_emailConfiguration.SmtpUsername, _emailConfiguration.SmtpPassword);
                 client.Capabilities &= ~SmtpCapabilities.Chunking;
-                client.Send(message);
+                //client.Send(message);
+                await client.SendAsync(message);
 
                 client.Disconnect(true);
             }
