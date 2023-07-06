@@ -1,0 +1,79 @@
+﻿
+@import "../rfs-scss.scss";
+
+
+@mixin marginAll($all) {
+
+    @include rfs($all, margin-block-start);
+    @include rfs($all, margin-block-end);
+    @include rfs($all, margin-inline-start);
+    @include rfs($all, margin-inline-end);
+}
+
+@mixin marginY($Y) {
+    @include rfs($Y, margin-block-start);
+    @include rfs($Y, margin-block-end);
+}
+
+@mixin marginX($X) {
+    @include rfs($X, margin-inline-start);
+    @include rfs($X, margin-inline-end);
+}
+
+
+@mixin margin-block-start($val) {
+    @include rfs($val, margin-block-start)
+}
+@mixin margin-block-end($val) {
+    @include rfs($val, margin-block-end)
+}
+@mixin margin-inline-start($val) {
+    @include rfs($val, margin-inline-start)
+}
+@mixin margin-inline-end($val) {
+    @include rfs($val, margin-inline-end)
+}
+
+
+
+
+
+
+
+
+
+@mixin paddingAll($all) {
+
+    @include rfs($all, padding-block-start);
+    @include rfs($all, padding-block-end);
+    @include rfs($all, padding-inline-start);
+    @include rfs($all, padding-inline-end);
+}
+
+@mixin paddingY($Y) {
+    @include rfs($Y, padding-block-start);
+    @include rfs($Y, padding-block-end);
+}
+
+@mixin paddingX($X) {
+    @include rfs($X, padding-inline-start);
+    @include rfs($X, padding-inline-end);
+}
+
+
+
+@mixin padding-block-start($val) {
+    @include rfs($val, padding-block-start)
+}
+
+@mixin padding-block-end($val) {
+    @include rfs($val, padding-block-end)
+}
+
+@mixin padding-inline-start($val) {
+    @include rfs($val, padding-inline-start)
+}
+
+@mixin padding-inline-end($val) {
+    @include rfs($val, padding-inline-end)
+}

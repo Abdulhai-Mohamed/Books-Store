@@ -1,0 +1,77 @@
+﻿@model Books_Store.Models.UserModels.RegisterModel
+
+@{
+    ViewBag.Title = "User Registration";
+}
+
+
+<div class="row justify-content-center ">
+
+
+
+        <h4 class="text-center">
+            Note that the valdiation here done by clients side(not waiting for server side response after submit a request)<br>
+            togther with serverside validation methods [validation attribute + validation tag helepers]
+        </h4>
+
+
+        <form method="post" enctype="multipart/form-data" asp-controller="Account" asp-action="Register" 
+        class="  row col-lg-5  col-8 p-5  px-md-0    justify-content-center  ">
+
+
+
+
+            <div class="col-12 text-center mb-5 ">
+                <h4>Kindly Insert your Details here</h4>
+            </div>
+            <div class="col-12">
+
+                <div class="row mb-3  justify-content-evenly">
+                    <label class="col-md-3  col-sm-12 col-form-label mb-2 mb-md-0" asp-for="Email"></label>
+                    <div class="col-md-7 col-sm-12 ">
+                        <input class="  form-control" asp-for=Email placeholder="Email" />
+                        <span class="validate-color" asp-validation-for="Email"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3  justify-content-evenly">
+                    <label class="col-md-3  col-sm-12 col-form-label mb-2 mb-md-0" asp-for="Password"></label>
+                    <div class="col-md-7 col-sm-12  ">
+                        <input class="  form-control" asp-for=Password placeholder="Password" />
+                        <span class="validate-color" asp-validation-for="Password"></span>
+                    </div>
+                </div>
+                <div class="row mb-3  justify-content-evenly">
+                    <label class="col-md-3  col-sm-12 col-form-label mb-2 mb-md-0" asp-for="ConfirmPassword"></label>
+                    <div class="col-md-7 col-sm-12  ">
+                        <input class="  form-control" asp-for=ConfirmPassword placeholder="Confirm Password" />
+                        <span class="validate-color" asp-validation-for="ConfirmPassword"></span>
+                    </div>
+                </div>
+
+
+            <div class="row mb-3  justify-content-evenly">
+                <label class="col-md-3  col-sm-12 col-form-label mb-2 mb-md-0" asp-for="myFavGame"></label>
+                <div class="col-md-7 col-sm-12  ">
+                    <input class="  form-control" asp-for=myFavGame placeholder="My favorite game" />
+                    <span class="validate-color" asp-validation-for="myFavGame"></span>
+                </div>
+            </div>
+
+                <div asp-validation-summary="All" class="validate-color"></div>
+                <div class="row mb-3  justify-content-evenly">
+                    <div class=" col-md-3  col-sm-12 col-form-label mb-2 mb-md-0"></div>
+                    <div class="col-md-7 col-sm-12">
+                        <button type="submit" class="btn btn-primary">Register</button>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </form>
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/jquery-validate/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+   
+</div>

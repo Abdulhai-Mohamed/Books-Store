@@ -1,0 +1,136 @@
+﻿@using Books_Store.Models.RoleModels
+@model EditUserModel
+@{
+    ViewBag.Title = "Edit User";
+}
+
+
+<div class="row justify-content-center ">
+
+
+
+
+
+    <form method="post" enctype="multipart/form-data" asp-controller="Administration" asp-action="EditUser"
+          class="  row col-lg-5  col-8 p-5  px-md-0    justify-content-center  ">
+
+
+
+
+        <div class="col-12 text-center mb-5 ">
+            <h4>Kindly edit user Details here</h4>
+        </div>
+
+
+        <div class="col-12">
+            <div class="row mb-3  justify-content-evenly">
+                <label class="col-md-3  col-sm-12 col-form-label mb-2 mb-md-0" asp-for="Id"></label>
+                <div class="col-md-7 col-sm-12 ">
+                    <input disabled class="  form-control" asp-for=Id  />
+                </div>
+            </div>
+
+            <div class="row mb-3  justify-content-evenly">
+                <label class="col-md-3  col-sm-12 col-form-label mb-2 mb-md-0" asp-for="Email"></label>
+                <div class="col-md-7 col-sm-12 ">
+                    <input class="  form-control" asp-for=Email placeholder="Email" />
+                    <span class="validate-color" asp-validation-for="Email"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3  justify-content-evenly">
+                <label class="col-md-3  col-sm-12 col-form-label mb-2 mb-md-0" asp-for="UserName"></label>
+                <div class="col-md-7 col-sm-12  ">
+                    <input class="  form-control" asp-for="UserName"  />
+                    <span class="validate-color" asp-validation-for="UserName"></span>
+                </div>
+            </div>
+           
+            
+            <div class="row mb-3  justify-content-evenly">
+                <label class="col-md-3  col-sm-12 col-form-label mb-2 mb-md-0" asp-for="FavouriteGame"></label>
+                <div class="col-md-7 col-sm-12  ">
+                    <input class="  form-control" asp-for="FavouriteGame" />
+                    <span class="validate-color" asp-validation-for="FavouriteGame"></span>
+                </div>
+            </div>
+
+
+
+            <div asp-validation-summary="All" class="validate-color"></div>
+            <div class="row mb-3  justify-content-evenly">
+                <div class=" col-md-3  col-sm-12 col-form-label mb-2 mb-md-0"></div>
+                <div class="col-md-7 col-sm-12">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <a asp-controller="Administration" asp-action="ListUsers" class="btn btn-primary">Cancel</a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+    
+    
+
+
+
+
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3>Roles for this User</h3>
+            </div>
+            <div class="card-body">
+                @if (Model.Roles.Any())
+                {
+                    foreach (var role in Model.Roles)
+                    {
+                        <h5 class="card-title">@role</h5>
+                    }
+                }
+                else
+                {
+                    <h5 class="card-title">None at the moment</h5>
+                }
+            </div>
+            <div class="card-footer">
+                <a asp-controller="Administration" asp-action="ManageUserRoles" asp-route-userId="@Model.Id" class="btn btn-primary">
+                    Manage User roles
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3>Claims for this User</h3>
+            </div>
+            <div class="card-body">
+                @if (Model.Claims.Any())
+                {
+                    foreach (var claim in Model.Claims)
+                    {
+                        <h5 class="card-title">@claim</h5>
+                    }
+                }
+                else
+                {
+                    <h5 class="card-title">None at the moment</h5>
+                }
+            </div>
+            <div class="card-footer">
+                <a asp-controller="Administration" asp-action="ManageUserClaims" asp-route-userId="@Model.Id" class="btn btn-primary">
+                    Manage User Claims
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+

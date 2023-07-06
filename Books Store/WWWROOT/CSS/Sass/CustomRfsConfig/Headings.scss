@@ -1,0 +1,35 @@
+﻿// scss/rfs-scss.scss
+@import "../rfs-scss.scss";
+@import "Mixins.scss";
+
+
+
+//For headings
+
+//Default =>  h1=32px(2rem) h2=24px(1.5rem) h3=18.72px(1.17rem) h4=16px(1rem) h5=13.28px(.83rem) h6=10.72px(.67rem)
+//Bootstrap =>  h1=40px(2.5rem) h2=32px(2rem) h3=28px(1.75rem) h4=24px(1.5rem) h5=20px(1.25rem) h6=16px(1rem)
+//boot strap already do the following in _reboot.scss file for heading elments #just but now we will create classes also
+h1, .h1 {
+    @include font-size(2.5rem);
+}
+
+h2, .h2 {
+
+    @include font-size(2rem );
+}
+
+h3, .h3 {
+    @include font-size(1.75rem );
+}
+
+h4, .h4 {
+    @include font-size(1.50rem );
+}
+
+h5, .h5 {
+    @include font-size(1.25rem );
+}
+
+h6, .h6 {
+    @include font-size(1rem );
+}

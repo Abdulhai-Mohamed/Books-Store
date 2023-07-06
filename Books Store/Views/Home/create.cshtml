@@ -1,0 +1,97 @@
+﻿@*@model Author*@
+
+@model Books_Store.View_Models.AuthorCreateViewModel
+@inject IAuthorRepository iAuthorRepository 
+@*We are injecting IAuthorRepository service in to the Create view using @inject directive 0
+to display the total number of Authors in the repository.*@
+
+
+@{
+    ViewBag.Title = "Create Author";
+}
+
+<div class="row  justify-content-center ">
+    <div class="col-12 validate-color text-center my-5 h4">
+        Total Authors Count = @iAuthorRepository.GetAllAuthors().Count().ToString()
+    </div>
+    @*To support file upload to a form = > set the form element enctype="multipart/form-data" *@
+
+    <form method="post"  enctype="multipart/form-data" asp-controller="Home" asp-action="create" class="  row col-lg-5  col-8 p-5  px-md-0    justify-content-center  ">
+
+
+
+
+        <div class="col-12 text-center mb-5 ">
+            <h4>Kindly Insert Author Details here</h4>
+        </div>
+        <div class="col-12">
+
+                <div class="row mb-3  justify-content-evenly" >
+                    <label class="col-md-3  col-sm-12 col-form-label mb-2 mb-md-0" asp-for="_author.Name"></label>
+                    <div class="col-md-7 col-sm-12 ">
+                        <input class="  form-control" asp-for=_author.Name placeholder="Name" />
+                        <span class="validate-color" asp-validation-for="_author.Name"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3  justify-content-evenly">
+                    <label class="col-md-3  col-sm-12 col-form-label mb-2 mb-md-0" asp-for="_author.Email"></label>
+                    <div class="col-md-7 col-sm-12  ">
+                        <input class="  form-control" asp-for=_author.Email placeholder="Email" />
+                        <span class="validate-color" asp-validation-for="_author.Email"></span>
+                    </div>
+                </div>
+
+                <div class="row mb-3  justify-content-evenly ">
+
+                    <label class="col-md-3  col-sm-12 col-form-label mb-2 mb-md-0" asp-for="_author.Department"></label>
+
+                    <div class="col-md-7 col-sm-12 ">
+                        <select class="form-select" aria-label="Default select example"
+                                asp-for="_author.Department"
+                                asp-items="Html.GetEnumSelectList<Dept>()">
+                            <option   value="">Please Select</option>
+
+                            @*Notice, we are using asp-items tag helper to bind Department select list to Dept enum
+                                also note that the method by defautlt set the 0value is the selected value so at enum we reassign the
+                                first value as 1 not 0 by default, because we want 0 set to the please select option
+
+                            *@
+                        </select>
+                        <span class="validate-color" asp-validation-for="_author.Department"></span>
+                        @*//we made Dept property nullable to enable valdtion of requreied attribute not the default enum(intgers) validation (erro message for  ntegers is: in valid)*@
+
+
+                    </div>
+                </div>
+           
+                @*  asp-for tag helper is set to "Photo" property. "Photo" property type is IFormFile
+                so at runtime asp.net core generates file upload control (input type=file)
+                To support multiple files upload include multiple attribute on the input element
+                *@
+
+                <div class="row mb-3  justify-content-evenly">
+
+                    <label class="col-md-3  col-sm-12 col-form-label mb-2 mb-md-0 custom-file-label" asp-for="Photos">Photo</label>
+                    <div class="col-md-7 col-sm-12  ">
+
+                        <div class="input-group mb-3">
+                            <input multiple  class="form-control" asp-for=Photos id="inputGroupFile02" />
+                        </div>
+                    </div>
+                </div>
+                <div asp-validation-summary="All" class="validate-color"></div>
+                <div class="row mb-3  justify-content-evenly">
+            <div class=" col-md-3  col-sm-12 col-form-label mb-2 mb-md-0"></div>
+            <div class="col-md-7 col-sm-12">
+                <button type="submit" class="btn btn-primary w-100 ">Create</button>
+            </div>
+        </div>
+        
+        </div>
+
+    </form>
+
+  
+</div>
+

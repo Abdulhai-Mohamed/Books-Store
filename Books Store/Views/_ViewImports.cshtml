@@ -1,0 +1,20 @@
+﻿@*
+Notice, @using directive is used to include the common namespaces. In addition to @using directive, _ViewImports file also supports the following directives.
+@addTagHelper
+@removeTagHelper
+@tagHelperPrefix
+@model
+@inherits
+@inject
+*@
+
+
+
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, AuthoringTagHelpers
+@using Books_Store.Models.AuthorModels;
+
+
+@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService authorizationService;

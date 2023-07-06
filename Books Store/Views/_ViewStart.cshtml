@@ -1,0 +1,23 @@
+﻿@*
+ you maybe wonder why we need to use both layout and view start when they do same job
+ layout have adventage to use the methods like renderbody while viewstart haven't it
+ viewstart called automatically with every page while to call layout view you have to 
+ set the property  Layout = "~/Views/Shared/_Layout.cshtml" for eaxch view.
+ 
+ so best practice is adding this prop throw viewstart
+
+ *@
+
+
+@{
+    if (User.IsInRole("Admin"))
+    {
+        //Layout = "_AdminLayout";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}

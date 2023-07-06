@@ -1,0 +1,80 @@
+﻿@using Books_Store.Models.RoleModels
+@model EditRoleModel
+@{
+    ViewBag.Title = "Edit Role";
+}
+
+<div class="row justify-content-center ">
+
+
+    <form method="post" enctype="multipart/form-data" asp-controller="Administration" asp-action="EditRole" class="  row col-lg-5  col-8 p-5  px-md-0    justify-content-center  ">
+
+
+
+
+        <div class="col-12 text-center mb-5 ">
+            <h4>Edit The Role</h4>
+        </div>
+        <div class="col-12">
+
+            <div class="row mb-3  justify-content-evenly">
+                <label class="col-md-3  col-sm-12 col-form-label mb-2 mb-md-0" asp-for="Id"></label>
+                <div class="col-md-7 col-sm-12 ">
+                    <input disabled class="  form-control" asp-for=Id  />
+                </div>
+            </div>
+
+            <div class="row mb-3  justify-content-evenly">
+                <label class="col-md-3  col-sm-12 col-form-label mb-2 mb-md-0" asp-for="RoleName"></label>
+                <div class="col-md-7 col-sm-12  ">
+                    <input class="  form-control" asp-for=RoleName  />
+                    <span class="validate-color" asp-validation-for="RoleName"></span>
+                </div>
+            </div>
+
+
+            <div asp-validation-summary="All" class="validate-color"></div>
+
+            <div class="row mb-3  justify-content-evenly">
+                <div class=" col-md-3  col-sm-12 col-form-label mb-2 mb-md-0"></div>
+                <div class="col-md-7 col-sm-12">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <a asp-controller="Administration" asp-action="ListRoles" class="ms-md-3 my-2 btn btn-danger">Cancel</a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+   
+    
+    
+    
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3>Users in this role</h3>
+            </div>
+            <div class="card-body"> 
+                @if (Model.Users.Any())
+                {
+                    foreach (var user in Model.Users)
+                    {
+                        <h5 class="card-title">@user</h5>
+                    }
+                }
+                else
+                {
+                    <h5 class="card-title">None at the moment</h5>
+                }
+            </div>
+            <div class="card-footer">
+                <a asp-controller="Administration" asp-action="EditUsersInRole" asp-route-roleId="@Model.Id" class="btn btn-primary">
+                    Add or remove users from this role
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>

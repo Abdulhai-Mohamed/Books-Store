@@ -1,0 +1,199 @@
+﻿@using Books_Store.Models.Pagination;
+@*@model IEnumerable<Books_Store.Models.Author>;*@
+@model IEnumerable<Author>;
+
+@{
+
+    ViewBag.Title = "Home";
+    //ViewBag.Title = ViewBag.test;
+
+    //add layout view to individual view[index at the moment] 
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+    //but we will set it through _ViewStart
+
+
+
+    Pager pager = new Pager();
+    int pageNo = 0;     
+
+    if (ViewBag.myPager != null)
+    {
+        pager = ViewBag.myPager;
+        pageNo = pager.CurrentPageNumber;
+
+    }
+
+
+}
+
+
+@*search*@
+<div class="  row m-md-4 m-sm-4">
+    <h3 class="col-12"> You can search by name here</h3>
+    <form class="d-flex col-6 notStyled" role="search" asp-controller="Home" asp-action="Search" >
+    <input class="form-control me-2" type="search" name="searchTerm" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
+</div>
+
+@if (ViewBag.searchResults != null)
+{
+    <h2>The Following is search results or you can go <a asp-controller="Home" asp-action="index">Home</a> to see full authors</h2>
+}
+
+    @*authors*@
+<div class="row gx-0 ">
+    @if(Model.Any() ){
+
+
+    @foreach(var author in Model)
+    {
+        var photoPath = "~/images/" + (author.PhotoPath ?? "unknown.png");
+        <div class="col-lg-4   col-md-6  col-12  ">
+             <div class="card  m-md-4 m-sm-4   ">
+                <div class="  bg-danger3 row justify-content-center  ">
+                    <img src="@photoPath" class="  col-md-8 col-4 " alt="..." asp-append-version="true">
+
+                    @*
+                    <img src="~/images/noimage.jpg" asp-append-version="true" />
+
+                    Image Tag Helper enhances the <img> tag to provide cache-busting behavior for static image files. Based on the content of the image, a unique hash value is calculated and is appended to image URL. This unique string prompts the browser to reload the image from the server and not from the browser cache.
+
+                    <img class="card-img-top" src="/images/noimage.jpg?v=IqNLbsazJ7ijEbbyzWPke-xWxkOFaVcgzpQ4SsQKBqY" />
+
+                    Each time the image on the server changes a new hash value is calculated and cached. If the image has not changed the hash isn't recalculated. Using this unique hash value, the browser keeps track of whether the image content on the server has changed.
+                    *@
+
+                 </div>
+
+                <div class="card-body text-md-start text-sm-center ">
+                            <h4 class="text-center text-warning">Author Details</h4>
+                            <h5><b> Author Id:</b> @author.Id</h5>
+                            <h5><b> Author Name:</b> @author.Name</h5>
+                            <h5><b> Author Email:</b> @author.Email</h5>
+                            <h5><b> Author Department:</b> @author.Department</h5>
+                            <form class="notStyled" method="post" asp-action="Delete" asp-route-id="@author.Id">
+
+                                <a  asp-controller="Home" asp-action="Details" asp-route-id="@author.EncryptedId"
+                                class=" my-2 btn btn-primary">View More Details</a>
+
+                                <a asp-controller="Home" asp-action="Edit" asp-route-id="@author.Id"
+                                class="ms-md-3 my-2 btn btn-secondary">Edit</a>
+
+                                <button type="submit" class="btn btn-danger" onclick=" return confirm('Are you sure you want to delete user : @author.Name ')  ">
+                                    Delete
+                                </button>
+
+                            </form>
+                                
+                            @*
+                                Generating Links using Tag Helpers
+
+                                Let's say we want to view a specific employee details. So we want to generate the following hyperlink. The number 5 is the ID of the employee whose details we want to view.
+
+                                /home/details/5
+
+                                There are several ways we could do this in a razor view
+
+                                Option 1 : Manually generating the links
+
+                                @foreach (var employee in Model)
+                                {
+                                <a href="/home/details/@employee.Id">View</a>
+                                }
+
+                                Option 2 : Using HTML helpers
+
+                                @Html.ActionLink("View", "details", new { id = employee.Id })
+
+                                generates an anchor element
+
+                                <a href="/hom/details/5">View</a>
+
+                                @Url.Action("details", "home", new { id = employee.Id })
+
+                                generates a string
+
+                                /hom/details/5
+
+                                Option 3 : Using Tag Helpers
+
+                                <a asp-controller="home" asp-action="details"
+                                asp-route-id="@employee.Id">View</a>
+
+                                generates
+
+                                <a href="/Home/details/5">View</a>
+
+
+                            *@
+
+
+                     </div>
+            </div>
+        </div>
+    }
+    }
+    else{
+        <h3>there is no authors at the moment</h3>
+    }
+</div>
+
+@*//pagination*@
+<div class="container">
+
+    @if (pager.TotalPages > 0)
+    {
+        <ul class="pagination justify-content-center">
+
+            @*if we in the page of number >= 1  ==> this mean we are not in the first page
+             and so that we need display buttons for  previous page and first page*@
+            @if (pager.CurrentPageNumber > 1)
+            {
+                <li class="page-item ">
+
+                    <a class="page-link" asp-controller="Home" asp-action="index" asp-route-TheCurrentPage="1"> First </a>
+                </li>
+                <li class="page-item ">
+
+                    <a class="page-link" asp-controller="Home" asp-action="index" asp-route-TheCurrentPage="@(pager.CurrentPageNumber - 1)"> Previous </a>
+                </li>
+            }
+
+
+            @for(var pge=pager.StartPagination; pge<=pager.EndPagination; pge++)
+            {
+                @*The @(pge == pager.CurrentPageNumber ? "active" : "") is a ternary operator that checks whether the current page number 
+
+                being generated (pge) matches the current page number stored in the CurrentPageNumber property of the pager object.
+                If the two values match, the "active" class is added to the li element. Otherwise, an empty string is added to the class attribute.*@
+                <li class="page-item  @(pge == pager.CurrentPageNumber ? "active" : "")  " >
+
+                    <a class="page-link" asp-controller="Home" asp-action="index" asp-route-TheCurrentPage="@pge"> @pge </a>
+                </li>
+
+            }
+
+
+            @*if we in the page of number < total pages number  ==> this mean we are not in the last page
+            and so that we need display buttons for  Next page and Last page*@
+            @if (pager.CurrentPageNumber < pager.TotalPages)
+            {
+                <li class="page-item ">
+
+                    <a class="page-link" asp-controller="Home" asp-action="index" asp-route-TheCurrentPage="@(pager.CurrentPageNumber + 1)"> Next </a>
+                </li>
+                <li class="page-item ">
+
+                    <a class="page-link" asp-controller="Home" asp-action="index" asp-route-TheCurrentPage="@(pager.TotalPages)"> Last </a>
+                </li>
+            }
+
+        </ul>
+    }
+
+</div>
+
+@section TestSection {
+       <p>test section body</p>
+}
