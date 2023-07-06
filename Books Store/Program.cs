@@ -107,8 +107,8 @@ try
 
         .AddFacebook(FacebookOptions =>
         {
-            FacebookOptions.AppId = "513912727350291";
-            FacebookOptions.AppSecret = "d6d68cf7abaf5e3891a90104615ede2b";
+            FacebookOptions.AppId = "221543337502090";
+            FacebookOptions.AppSecret = "7d47ed95838729fec8dd5c60abc0a2f8";
             //FacebookOptions.CallbackPath="/"; //change default path root/signin-facebbok
         });
 
