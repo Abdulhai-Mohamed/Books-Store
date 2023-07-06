@@ -1,45 +1,20 @@
-using Azure.Core;
-using Books_Store.Controllers;
 using Books_Store.Models.AuthorModels;
 using Books_Store.Models.EF_Core_DB_Models;
+using Books_Store.Models.SendEmailsModels;
+using Books_Store.Models.UserModels;
+using Books_Store.Security.CustomAuthprizationRequirments;
+using Books_Store.Security.CustomDataProtectorTokenProvider;
+using Books_Store.Security.EncryptionAndDecryption;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Options;
-using NLog.Extensions.Logging;
-using NuGet.Configuration;
-using System;
-using System.Diagnostics;
-using System.Drawing;
-using System.Numerics;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
-using static System.Net.Mime.MediaTypeNames;
-using System.Security.Policy;
-using static System.Net.WebRequestMethods;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System.Collections.Generic;
-using Books_Store.Models.UserModels;
-using System.Data;
-using static System.Reflection.Metadata.BlobBuilder;
-using System.Net;
-using System.Runtime.Intrinsics.X86;
-using System.Reflection.Metadata;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Authentication.Google;
-using Microsoft.AspNetCore.Authentication;
-using Books_Store.Security.CustomAuthprizationRequirments;
-using Books_Store.Security.CustomDataProtectorTokenProvider;
-using Books_Store.Security.EncryptionAndDecryption;
-using System.Threading;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using System.Timers;
-using Books_Store.Utilities;
-using Books_Store.Models.SendEmailsModels;
 using NLog;
-using NLog.Targets;
+using NLog.Extensions.Logging;
 using NLog.Web;
 
 
@@ -132,8 +107,8 @@ try
 
         .AddFacebook(FacebookOptions =>
         {
-            FacebookOptions.AppId = "513912727350291";
-            FacebookOptions.AppSecret = "d6d68cf7abaf5e3891a90104615ede2b";
+            FacebookOptions.AppId = "221543337502090";
+            FacebookOptions.AppSecret = "7d47ed95838729fec8dd5c60abc0a2f8";
             //FacebookOptions.CallbackPath="/"; //change default path root/signin-facebbok
         });
 
