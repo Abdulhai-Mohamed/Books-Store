@@ -103,8 +103,8 @@ namespace Books_Store.Models.SendEmailsModels
                 client.Connect(_emailConfiguration.SmtpServer, _emailConfiguration.SmtpPort, SecureSocketOptions.StartTls);
                 client.Authenticate(_emailConfiguration.SmtpUsername, _emailConfiguration.SmtpPassword);
                 client.Capabilities &= ~SmtpCapabilities.Chunking;
-                //client.Send(message);
-                await client.SendAsync(message);
+                client.Send(message);
+                //await client.SendAsync(message);
 
                 client.Disconnect(true);
             }
