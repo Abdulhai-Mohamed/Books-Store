@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using Books_Store.Models.AuthorModels;
 using Books_Store.Models.EF_Core_DB_Models;
 using Books_Store.Models.Pagination;
@@ -5,6 +6,38 @@ using Books_Store.Security.EncryptionAndDecryption;
 using Books_Store.View_Models;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
+=======
+﻿using Azure.Core;
+using Azure;
+using Books_Store.Models.AuthorModels;
+using Books_Store.Models.EF_Core_DB_Models;
+using Books_Store.View_Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.CodeAnalysis.Recommendations;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileSystemGlobbing.Internal;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Hosting.Internal;
+using System;
+using System.Collections.Generic;
+using System.Numerics;
+using System.Runtime.Intrinsics.X86;
+using System.Security.Policy;
+using System.Xml.Linq;
+using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.DataProtection;
+using Books_Store.Security.EncryptionAndDecryption;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Http;
+using Books_Store.Models.UserModels;
+using Books_Store.Models.Pagination;
+using Microsoft.DotNet.Scaffolding.Shared.CodeModifier.CodeChange;
+using static System.Net.Mime.MediaTypeNames;
+using System.ComponentModel;
+using System.Diagnostics.Metrics;
+>>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
 
 namespace Books_Store.Controllers
 {
@@ -31,21 +64,38 @@ namespace Books_Store.Controllers
         private readonly IDataProtector IDataProtector;
 
 
+<<<<<<< HEAD
 
 
         public HomeController(
             IAuthorRepository _iAuthorRepository,
             IWebHostEnvironment _iWebHostEnvironment,
+=======
+     
+
+        public HomeController(
+            IAuthorRepository _iAuthorRepository , 
+            IWebHostEnvironment _iWebHostEnvironment ,
+>>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
             IConfiguration _iConfiguration,
             MyDbContext _MyDbContext, //also Di will automatically create the argument for specfic parameters
             IDataProtectionProvider IDataProtectionProvider,
             OurCustomDataProtectionPurposeStrings OurCustomDataProtectionPurposeStrings
+<<<<<<< HEAD
 
             )
 
         {
             this.iAuthorRepository = _iAuthorRepository;//after we recived the argument from Di here we manually reassign it to our  private readonly variable 
             this.iWebHostEnvironment = _iWebHostEnvironment;
+=======
+            
+            )
+
+        {
+            this.iAuthorRepository =_iAuthorRepository;//after we recived the argument from Di here we manually reassign it to our  private readonly variable 
+            this.iWebHostEnvironment =_iWebHostEnvironment;
+>>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
             this.iConfiguration = _iConfiguration;
             this.MyDbContext = _MyDbContext;
 
@@ -57,10 +107,17 @@ namespace Books_Store.Controllers
 
 
         #region 1-Index
+<<<<<<< HEAD
         public ViewResult Index(int TheCurrentPage = 1)
         {
             //1-
             ViewBag.test = iConfiguration["testJsonKeys"];
+=======
+        public ViewResult Index(int TheCurrentPage=1)
+        {
+            //1-
+           ViewBag.test = iConfiguration["testJsonKeys"];
+>>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
             //2-
             //IEnumerable<Author> Authors = iAuthorRepository.GetAllAuthors().Select(Author=>
             //{
@@ -82,8 +139,13 @@ namespace Books_Store.Controllers
             const int ThepageSize = 9;
 
             if (TheCurrentPage < 1) TheCurrentPage = 1;
+<<<<<<< HEAD
 
             Pager pager = new Pager(authorsCount, TheCurrentPage, ThepageSize);
+=======
+           
+            Pager pager = new Pager(authorsCount,TheCurrentPage, ThepageSize);
+>>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
 
 
 
@@ -107,13 +169,21 @@ namespace Books_Store.Controllers
             //the second page of a list of authors where each page contains 10 authors, you can use the following code:
             //var authors = context.Authors.Skip(10).Take(10);
             //This will skip the first 10 authors and return the next 10 authors, which corresponds to the second page of the list.
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
             //if the page we request(current) has id 6 so we want escape (6-1)*9 ==45 item
             int numberOfSkippedAuthors = (TheCurrentPage - 1) * ThepageSize;
 
             IEnumerable<Author> data = Authors.Skip(numberOfSkippedAuthors).Take(pager.PageSize).ToList();    //after scip we take only page size items
 
+<<<<<<< HEAD
             ViewBag.myPager = pager;
+=======
+            ViewBag.myPager=pager;
+>>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
 
 
 
@@ -126,7 +196,11 @@ namespace Books_Store.Controllers
         public IActionResult Search(string searchTerm)
         {
             IEnumerable<Author> result = iAuthorRepository.Search(searchTerm);
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
             return View("index", result);
         }
         #endregion
@@ -145,7 +219,11 @@ namespace Books_Store.Controllers
         }
 
         [HttpPost]
+<<<<<<< HEAD
         public IActionResult create(AuthorCreateViewModel authorCreateViewModel)
+=======
+        public IActionResult create( AuthorCreateViewModel authorCreateViewModel)
+>>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
         {
             if (ModelState.IsValid)
             {
@@ -195,6 +273,7 @@ namespace Books_Store.Controllers
                     
                  
                  */
+<<<<<<< HEAD
                 //int maxId;
 
                 //if (iAuthorRepository.GetAllAuthors().Count() > 0)
@@ -209,6 +288,22 @@ namespace Books_Store.Controllers
                 //    MyDbContext.Database.ExecuteSqlRaw($"DBCC CHECKIDENT ('Authors', RESEED, {maxId})");
 
                 //}
+=======
+                    //int maxId;
+
+                    //if (iAuthorRepository.GetAllAuthors().Count() > 0)
+                    //{
+                    //    maxId = iAuthorRepository.GetAllAuthors().Max<Author>(author => author.Id);
+                    //    MyDbContext.Database.ExecuteSqlRaw($"DBCC CHECKIDENT ('Authors', RESEED, {maxId})");
+
+                    //}
+                    //else
+                    //{
+                    //    maxId = 0;
+                    //    MyDbContext.Database.ExecuteSqlRaw($"DBCC CHECKIDENT ('Authors', RESEED, {maxId})");
+
+                    //}
+>>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
 
                 Author author = new Author
                 {
@@ -219,10 +314,17 @@ namespace Books_Store.Controllers
                     // which gets saved to the Authors database table
                     //TADA because of that line we create  a sperate view modell, cause in our DB
                     //we want just the name of the photo, however in our server we want the file itself 
+<<<<<<< HEAD
                     PhotoPath = uniqueFileName
                 };
                 iAuthorRepository.Add(author);
                 return RedirectToAction("Details", new { id = author.Id });
+=======
+                    PhotoPath = uniqueFileName 
+                };
+                iAuthorRepository.Add(author);
+                return RedirectToAction("Details",new { id =author.Id});
+>>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
 
             }
             return View();
@@ -326,7 +428,11 @@ namespace Books_Store.Controllers
 
 
 
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
             string uniqueFileName = null;
 
 
@@ -383,7 +489,11 @@ namespace Books_Store.Controllers
         public IActionResult Delete(int id)
         {
 
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
             iAuthorRepository.Delete(id);
             return RedirectToAction("index");
         }
@@ -479,7 +589,11 @@ namespace Books_Store.Controllers
         We can do the same with attribute routing as well=> [Route("Home/Details/{id?}")]
 
          */
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
         public ViewResult Test7()
         {
             return View();
@@ -542,10 +656,17 @@ namespace Books_Store.Controllers
 
             //but in asp core framework to get an binding
             //the place holder must be same name as parameter
+<<<<<<< HEAD
             ViewBag.theId = id;
             return View();
 
 
+=======
+            ViewBag.theId=id;
+            return View();
+
+          
+>>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
         }
 
         public ViewResult Test9()
@@ -563,11 +684,19 @@ namespace Books_Store.Controllers
         public ViewResult Test11()
         {
             return View();
+<<<<<<< HEAD
 
         }
 
         #endregion
 
+=======
+                
+        }
+
+        #endregion
+    
+>>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
     }
 
 
