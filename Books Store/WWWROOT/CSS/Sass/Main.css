@@ -1,0 +1,146 @@
+﻿/*Global*/
+html {
+  /*font-size:62.5%;*/
+}
+
+body, pre {
+  font-family: "Rowdies", cursive;
+  /* font-family: 'Lobster', cursive;*/
+}
+
+::placeholder {
+  color: black !important;
+}
+
+/*layout*/
+pre {
+  white-space: pre-wrap; /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+.layout-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 5rem;
+  font-family: "Lobster", cursive !important;
+  color: hotpink;
+}
+.layout-header:after, .layout-header:before {
+  content: "";
+  border-top: 0.1em double red;
+  align-self: center;
+  display: inline-block;
+}
+
+.navbar {
+  background: #301E67;
+}
+
+.fa-book-open-reader {
+  font-size: 3.5rem;
+  color: white;
+}
+.fa-book-open-reader::before {
+  background: linear-gradient(to right, #F27121, red, yellow); /* Chrome 10-25, Safari 5.1-6 */
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.navbar-toggler {
+  background: linear-gradient(to right, #F27121, red, yellow); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@media (max-width: 992px) {
+  .navbar-nav {
+    align-items: center !important;
+  }
+}
+.navbar-nav li a {
+  color: white;
+}
+
+/*index*/
+.row {
+  --bs-gutter-x: 0rem;
+}
+.validate-color {
+  color: #191970;
+}
+
+.form-div, form:not(.notStyled) {
+  background: #f4f7f8;
+  border-radius: calc(1.275rem + 0.3vw) !important;
+  background: linear-gradient(to right, #F27121, red, yellow); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+@media (min-width: 1200px) {
+  .form-div, form:not(.notStyled) {
+    border-radius: 1.5rem !important;
+  }
+}
+.form-div div:nth-child(1) h4, form:not(.notStyled) div:nth-child(1) h4 {
+  color: #191970;
+}
+.form-div div:nth-child(2) div:nth-of-type(-n +4) label, form:not(.notStyled) div:nth-child(2) div:nth-of-type(-n +4) label {
+  color: white;
+}
+.form-div .external_login, form:not(.notStyled) .external_login {
+  border-inline-start: 1px solid gray;
+}
+
+.form-check-label {
+  user-select: none;
+}
+
+#timer-father {
+  text-align: center;
+  padding: 70px 50px;
+  background: #0D1A29;
+  font-family: "Helvetica Neue", "Open Sans", helvetica, arial, sans-serif;
+}
+#timer-father h3 {
+  color: #B1CDF1;
+  display: block;
+  font-weight: 400;
+}
+#timer-father #timer {
+  font-size: 3em;
+  font-weight: 100;
+  color: white;
+  text-shadow: 0 0 20px #48C8FF;
+}
+#timer-father #timer div {
+  display: inline-block;
+  min-width: 90px;
+}
+#timer-father #timer div span {
+  color: #B1CDF1;
+  display: block;
+  font-size: 0.35em;
+  font-weight: 400;
+}
+
+.Logout_alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  text-align: center;
+  display: none;
+  animation: slideDown 1s ease-out;
+  z-index: 999;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

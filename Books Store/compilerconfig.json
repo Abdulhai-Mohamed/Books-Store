@@ -1,0 +1,30 @@
+﻿[
+  {
+    "outputFile": "wwwroot/CSS/Main.css",
+    "inputFile": "wwwroot/CSS/Main.scss"
+  },
+  {
+    "outputFile": "wwwroot/CSS/rfs-scss.css",
+    "inputFile": "wwwroot/CSS/rfs-scss.scss"
+  },
+  {
+    "outputFile": "wwwroot/CSS/Sass/customRfsConfig.css",
+    "inputFile": "wwwroot/CSS/Sass/customRfsConfig.scss"
+  },
+  {
+    "outputFile": "wwwroot/CSS/Sass/Main.css",
+    "inputFile": "wwwroot/CSS/Sass/Main.scss"
+  },
+  {
+    "outputFile": "wwwroot/CSS/Sass/CustomRfsConfig/customRfsConfig.css",
+    "inputFile": "wwwroot/CSS/Sass/CustomRfsConfig/customRfsConfig.scss"
+  },
+  {
+    "outputFile": "wwwroot/CSS/Sass/CustomRfsConfig/_Mixins.css",
+    "inputFile": "wwwroot/CSS/Sass/CustomRfsConfig/_Mixins.scss"
+  },
+  {
+    "outputFile": "wwwroot/CSS/Sass/CustomRfsConfig/Headings.css",
+    "inputFile": "wwwroot/CSS/Sass/CustomRfsConfig/Headings.scss"
+  }
+]

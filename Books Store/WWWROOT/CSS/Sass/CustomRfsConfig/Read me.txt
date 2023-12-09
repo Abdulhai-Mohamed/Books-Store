@@ -1,0 +1,16 @@
+﻿//this folder will 
+
+
+1-overwrite the main rfs in few things by add important directive to every proeprty
+by manually hardcode this in the main mixin rfs in the sorce code file in both properties >1200($val) in line 293 
+and <1200 ($fluid-val) in line 294
+        $val: rfs-value($values !important);
+        $fluid-val: rfs-fluid-value($values !important);
+
+2-add wrapper mixins like margin all and padding all
+then overwite bootstrap margin and padding classes by pass the values to mixins and not hard code it 
+like what bootstrap did
+
+
+3-create responsice heading class same as heading elments in bootstrap ,
+but i want classes to enable use it with elements like p and spans

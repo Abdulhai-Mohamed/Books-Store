@@ -1,0 +1,197 @@
+﻿// scss/rfs-scss.scss
+@import "rfs-scss.scss";
+@import "CustomRfsConfig/Mixins.scss";
+@import "Variables.scss";
+
+
+
+/*Global*/
+html{
+    /*font-size:62.5%;*/ //do not reset html , reset elements byrfs instead
+}
+
+body, pre {
+    font-family: 'Rowdies', cursive;
+    /* font-family: 'Lobster', cursive;*/
+    
+}
+
+::placeholder {
+    color: black !important;
+}
+
+
+
+
+/*layout*/
+pre {
+    white-space: pre-wrap; /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+.layout-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 5rem;
+    font-family: 'Lobster', cursive !important;
+    color: $heading-color;
+
+    &:after, &:before {
+        content: "";
+        border-top: 0.1em double red;
+        align-self: center;
+        display: inline-block;
+    }
+}
+
+.navbar {
+    background: #301E67;
+}
+
+.fa-book-open-reader {
+    font-size: 3.5rem;
+    color: white;
+
+    &::before {
+        background: $main-gradient; /* Chrome 10-25, Safari 5.1-6 */
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+}
+
+
+.navbar-toggler {
+    background: $main-gradient; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.navbar-nav {
+
+    @media (max-width:992px) {
+        align-items: center !important;
+    }
+
+    & li {
+        & a {
+            color: white;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+/*index*/
+
+
+
+//create author
+
+
+
+.row {
+    --bs-gutter-x: 0rem;
+
+    & .form-control {
+    }
+}
+
+.validate-color {
+    color: #191970;
+}
+.form-div, form:not(.notStyled) {
+    background: #f4f7f8;
+    @include rfs(1.5rem,border-radius );
+    background: $main-gradient; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+    & div:nth-child(1) {
+
+
+        & h4 {
+            color: #191970;
+        }
+    }
+
+    & div:nth-child(2) {
+
+        & div:nth-of-type(-n +4) label {
+            color: white;
+        }
+    }
+
+    & .external_login{
+        border-inline-start: 1px solid gray;
+    }
+}
+
+
+
+.form-check-label{
+    user-select:none;
+}
+
+
+
+#timer-father {
+    text-align: center;
+    padding: 70px 50px;
+    background: #0D1A29;
+    font-family: "Helvetica Neue", "Open Sans", helvetica, arial, sans-serif;
+
+    h3 {
+        color: #B1CDF1;
+        display: block;
+        font-weight: 400;
+    }
+
+    #timer {
+        font-size: 3em;
+        font-weight: 100;
+        color: white;
+        text-shadow: 0 0 20px #48C8FF;
+
+        div {
+            display: inline-block;
+            min-width: 90px;
+
+            span {
+                color: #B1CDF1;
+                display: block;
+                font-size: .35em;
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+
+
+.Logout_alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    text-align: center;
+    display: none;
+    animation: slideDown 1s ease-out;
+    z-index: 999;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,43 @@
+﻿@model Author
+@{
+    ViewBag.Title = "Author Details";
+    var photoPath = "~/images/" + (@Model.PhotoPath ?? "unknown.png");
+
+}
+
+
+<div class="row justify-content-center">
+<h3 class="text-center">Note the encrypted ID in the URL</h3>
+    <div class="card  m-md-4 m-sm-4  col-lg-4   col-md-6  col-12  ">
+            <div class="  bg-danger3 row justify-content-center  ">
+                <img src="@photoPath" class="  col-md-8 col-4 " alt="..." asp-append-version="true">
+
+            </div>
+
+            <div class="card-body text-md-start text-sm-center ">
+                <h4 class="text-center text-warning">Author Details</h4>
+                <h5><b> Author Id:</b> @Model.Id</h5>
+                <h5><b> Author Name:</b> @Model.Name</h5>
+                <h5><b> Author Email:</b> @Model.Email</h5>
+                <h5><b> Author Department:</b> @Model.Department</h5>
+                <a asp-controller="Home" asp-action="index"
+                   class=" my-2 btn btn-primary">Home</a>
+                <a asp-controller="Home" asp-action="Edit" asp-route-id="@Model.Id"
+                   class="ms-md-3 my-2 btn btn-secondary">Edit</a>
+    
+            <form class="notStyled" method="post" asp-action="Delete" asp-route-id="@Model.Id">
+
+                <button type="submit" class="btn btn-danger" onclick=" return confirm('Are you sure you want to delete user : @Model.Name ')  ">
+                    Delete
+                </button>
+            </form>
+
+
+
+            </div>
+        </div>
+
+</div>
+
+
+

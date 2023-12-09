@@ -1,0 +1,46 @@
+﻿@model Books_Store.Models.RoleModels.CreateRoleModel;
+@{
+    ViewBag.Title = "Create Role";
+}
+
+
+<div class="row justify-content-center ">
+
+
+
+ 
+
+    <form method="post" enctype="multipart/form-data" asp-controller="Administration" asp-action="CreateRole" class="  row col-lg-5  col-8 p-5  px-md-0    justify-content-center  ">
+
+
+        <div class="col-12 text-center mb-5 ">
+            <h4>Kindly Insert Role Name here</h4>
+        </div>
+
+
+        <div class="col-12">
+
+            <div class="row mb-3  justify-content-evenly">
+                <label class="col-md-3  col-sm-12 col-form-label mb-2 mb-md-0" asp-for="RoleName"></label>
+                <div class="col-md-7 col-sm-12 ">
+                    <input class="  form-control" asp-for=RoleName placeholder="Role Name" />
+                    <span class="validate-color" asp-validation-for="RoleName"></span>
+                </div>
+            </div>
+
+
+            <div asp-validation-summary="All" class="validate-color"></div>
+            <div class="row mb-3  justify-content-evenly">
+                <div class=" col-md-3  col-sm-12 col-form-label mb-2 mb-md-0"></div>
+                <div class="col-md-7 col-sm-12">
+                    <button type="submit" class="btn btn-primary">Create</button>
+
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+
+
+</div>

@@ -1,0 +1,451 @@
+﻿
+// scss/rfs-scss.scss
+@import "../rfs-scss.scss";
+@import "Mixins.scss";
+
+
+
+//for margins and padding 
+
+//Bootstrap margins and padding =>
+//m-5 3rem
+//m-4 1.5rem
+//m-3 1rem
+//m-2 .5rem
+//m-1 .25rem
+
+
+
+//overwrite bootstrap classes, to  include custom mixins mixins
+
+.m-all-0 {
+    @include marginAll(0rem )
+}
+
+.m-all-1 {
+   
+    @include marginAll(0.25rem )
+}
+
+.m-all-2 {
+    @include marginAll(0.5rem )
+}
+
+.m-all-3 {
+    @include marginAll(1rem )
+}
+
+.m-all-4 {
+    @include marginAll(1.5rem )
+}
+
+.m-all-5 {
+    @include marginAll(3rem )
+}
+
+.m-all-auto {
+  margin: auto ;
+}
+
+
+
+.m-inline-0 {
+    @include marginX(0rem )
+}
+
+.m-inline-1 {
+    @include marginX(0.25rem )
+}
+
+.m-inline-2 {
+    @include marginX(.5rem )
+}
+
+.m-inline-3 {
+    @include marginX(1rem )
+}
+
+.m-inline-4 {
+    @include marginX(1.5rem )
+}
+
+.m-inline-5 {
+    @include marginX(3rem )
+}
+
+.m-inline-auto {
+  margin-inline: auto ;
+}
+
+
+
+.m-block-0 {
+    @include marginY(0rem )
+}
+
+.m-block-1 {
+    @include marginY(0.25rem )
+}
+
+.m-block-2 {
+    @include marginY(.5rem )
+}
+
+.m-block-3 {
+    @include marginY(1rem )
+}
+
+.m-block-4 {
+    @include marginY(1.5rem )
+}
+
+.m-block-5 {
+    @include marginY(3rem )
+}
+
+.m-block-auto {
+  margin-block: auto ;
+}
+
+
+
+.m-b-s-0 {
+    @include margin-block-start(0rem);
+}
+
+.m-b-s-1 {
+    @include margin-block-start(.25rem);
+}
+
+.m-b-s-2 {
+    @include margin-block-start(.5rem);
+}
+
+.m-b-s-3 {
+    @include margin-block-start(1rem);
+}
+
+.m-b-s-4 {
+    @include margin-block-start(1.5rem);
+}
+
+.m-b-s-5 {
+    @include margin-block-start(3rem);
+}
+
+.m-b-s-auto {
+    margin-block-start: auto;
+}
+
+
+
+.m-b-e-0 {
+    @include margin-block-end(0rem);
+}
+
+.m-b-e-1 {
+    @include margin-block-end(.25rem);
+}
+
+.m-b-e-2 {
+    @include margin-block-end(.5rem);
+}
+
+.m-b-e-3 {
+    @include margin-block-end(1rem);
+}
+
+.m-b-e-4 {
+    @include margin-block-end(1.5rem);
+}
+
+.m-b-e-5 {
+    @include margin-block-end(3rem);
+}
+
+.m-b-e-auto {
+    margin-block-end: auto;
+}
+
+
+
+
+.m-i-s-0 {
+    @include margin-inline-start(0rem);
+}
+
+.m-i-s-1 {
+    @include margin-inline-start(.25rem);
+}
+
+.m-i-s-2 {
+    @include margin-inline-start(.5rem);
+}
+
+.m-i-s-3 {
+    @include margin-inline-start(1rem);
+}
+
+.m-i-s-4 {
+    @include margin-inline-start(1.5rem);
+}
+
+.m-i-s-5 {
+    @include margin-inline-start(3rem);
+}
+
+.m-i-s-auto {
+    margin-inline-start: auto;
+}
+
+
+
+
+.m-i-e-0 {
+    @include margin-inline-end(0rem);
+}
+
+.m-i-e-1 {
+    @include margin-inline-end(.25rem);
+}
+
+.m-i-e-2 {
+    @include margin-inline-end(.5rem);
+}
+
+.m-i-e-3 {
+    @include margin-inline-end(1rem);
+}
+
+.m-i-e-4 {
+    @include margin-inline-end(1.5rem);
+}
+
+.m-i-e-5 {
+    @include margin-inline-end(3rem);
+}
+
+.m-i-e-auto {
+    margin-inline-end: auto;
+}
+
+
+
+
+
+
+
+
+.p-all-0 {
+    @include paddingAll(0rem )
+}
+
+.p-all-1 {
+
+    @include paddingAll(0.25rem )
+}
+
+.p-all-2 {
+    @include paddingAll(0.5rem )
+}
+
+.p-all-3 {
+    @include paddingAll(1rem )
+}
+
+.p-all-4 {
+    @include paddingAll(1.5rem )
+}
+
+.p-all-5 {
+    @include paddingAll(3rem )
+}
+
+.p-all-auto {
+    padding: auto;
+}
+
+
+
+.p-inline-0 {
+    @include paddingX(0rem )
+}
+
+.p-inline-1 {
+    @include paddingX(0.25rem )
+}
+
+.p-inline-2 {
+    @include paddingX(.5rem )
+}
+
+.p-inline-3 {
+    @include paddingX(1rem )
+}
+
+.p-inline-4 {
+    @include paddingX(1.5rem )
+}
+
+.p-inline-5 {
+    @include paddingX(3rem )
+}
+
+.p-inline-auto {
+    padding-inline: auto;
+}
+
+
+
+.p-block-0 {
+    @include paddingY(0rem )
+}
+
+.p-block-1 {
+    @include paddingY(0.25rem )
+}
+
+.p-block-2 {
+    @include paddingY(.5rem )
+}
+
+.p-block-3 {
+    @include paddingY(1rem )
+}
+
+.p-block-4 {
+    @include paddingY(1.5rem )
+}
+
+.p-block-5 {
+    @include paddingY(3rem )
+}
+
+.p-block-auto {
+    padding-block: auto;
+}
+
+
+
+
+
+.p-b-s-0 {
+    @include padding-block-start(0rem);
+}
+
+.p-b-s-1 {
+    @include padding-block-start(.25rem);
+}
+
+.p-b-s-2 {
+    @include padding-block-start(.5rem);
+}
+
+.p-b-s-3 {
+    @include padding-block-start(1rem);
+}
+
+.p-b-s-4 {
+    @include padding-block-start(1.5rem);
+}
+
+.p-b-s-5 {
+    @include padding-block-start(3rem);
+}
+
+.p-b-s-auto {
+    padding-block-start: auto;
+}
+
+
+
+.p-b-e-0 {
+    @include padding-block-end(0rem);
+}
+
+.p-b-e-1 {
+    @include padding-block-end(.25rem);
+}
+
+.p-b-e-2 {
+    @include padding-block-end(.5rem);
+}
+
+.p-b-e-3 {
+    @include padding-block-end(1rem);
+}
+
+.p-b-e-4 {
+    @include padding-block-end(1.5rem);
+}
+
+.p-b-e-5 {
+    @include padding-block-end(3rem);
+}
+
+.p-b-e-auto {
+    padding-block-end: auto;
+}
+
+
+
+
+.p-i-s-0 {
+    @include padding-inline-start(0rem);
+}
+
+.p-i-s-1 {
+    @include padding-inline-start(.25rem);
+}
+
+.p-i-s-2 {
+    @include padding-inline-start(.5rem);
+}
+
+.p-i-s-3 {
+    @include padding-inline-start(1rem);
+}
+
+.p-i-s-4 {
+    @include padding-inline-start(1.5rem);
+}
+
+.p-i-s-5 {
+    @include padding-inline-start(3rem);
+}
+
+.p-i-s-auto {
+    padding-inline-start: auto;
+}
+
+
+
+
+.p-i-e-0 {
+    @include padding-inline-end(0rem);
+}
+
+.p-i-e-1 {
+    @include padding-inline-end(.25rem);
+}
+
+.p-i-e-2 {
+    @include padding-inline-end(.5rem);
+}
+
+.p-i-e-3 {
+    @include padding-inline-end(1rem);
+}
+
+.p-i-e-4 {
+    @include padding-inline-end(1.5rem);
+}
+
+.p-i-e-5 {
+    @include padding-inline-end(3rem);
+}
+
+.p-i-e-auto {
+    padding-inline-end: auto;
+}
+

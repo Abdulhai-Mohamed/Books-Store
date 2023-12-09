@@ -1,0 +1,29 @@
+﻿@model Author
+
+@{
+    ViewData["Title"] = "Test6";
+}
+
+
+
+
+<h1>passing data through viewData object:</h1>
+<h4>title is @ViewData["Title"]</h4>
+<h4>@ViewData["myViewDataPro1"]</h4>
+<h4>@ViewData["myViewDataPro2"]</h4>
+<h4>@ViewData["myViewDataPro3"]</h4>
+<h4>@ViewData["myViewDataPro4"]</h4>
+<hr />
+
+<h1>passing data through viewBag object:</h1>
+<h4>@ViewBag.myViewBagPro1</h4>
+<h4>@ViewBag.myViewBagPro2</h4>
+<h4>@ViewBag.myViewBagPro3</h4>
+<h4>@ViewBag.myViewBagPro4</h4>
+<hr />
+
+<h1>passing data through Strongely type Model object:</h1>
+<h4>@Model.Name</h4>
+<h4>@Model.Id</h4>
+<h4>@Model.Email</h4>
+<h4>@Model.Department</h4>
