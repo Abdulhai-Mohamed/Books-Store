@@ -441,15 +441,11 @@ try
     iServiceCollection.AddDbContextPool<MyDbContext>(
                 dbContextOptionsBuilder =>
                 dbContextOptionsBuilder.UseSqlServer(   //use the sql server as the EF DB provider
-<<<<<<< HEAD
                                                         //for dev
                                                         iConfiguration.GetConnectionString("AuthorDBConnection") //get the connection string from json fles by usng iConfiguration instance
                                                                                                                  //for deploy
                                                                                                                  //"workstation id=BookStoreDBs.mssql.somee.com;packet size=4096;user id=Abdul-HaiM_SQLLogin_1;pwd=fnztzz2f7i;data source=BookStoreDBs.mssql.somee.com;persist security info=False;initial catalog=BookStoreDBs;Encrypt=false;"
 
-=======
-                iConfiguration.GetConnectionString("AuthorDBConnection") //get the connection string from json fles by usng iConfiguration instance
->>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
                     ));
 
 

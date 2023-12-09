@@ -1,18 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Diagnostics;
-<<<<<<< HEAD
 using Microsoft.AspNetCore.Mvc;
-=======
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Microsoft.VisualBasic;
-using NLog;
-using NLog.Filters;
-using NLog.Fluent;
-using System.Diagnostics;
-using System.Runtime.Intrinsics.X86;
->>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
 
 namespace Books_Store.Controllers
 {
@@ -21,15 +9,9 @@ namespace Books_Store.Controllers
 
         private readonly ILogger<ErrorController> ILogger_ErrorController_;
 
-<<<<<<< HEAD
         //Inject ASP.NET Core ILogger service. Specify the Controller
         //Type as the generic parameter. This helps us identify later
         //which class or controller has logged the exception
-=======
-         //Inject ASP.NET Core ILogger service. Specify the Controller
-         //Type as the generic parameter. This helps us identify later
-         //which class or controller has logged the exception
->>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
 
 
         public ErrorController(ILogger<ErrorController> logger)
@@ -44,22 +26,14 @@ namespace Books_Store.Controllers
         #region 1-Centralised 404 error handling
         //If there is 404 status code, the route path will become Error/404
         [Route("Error/{statusCode}")]
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
         public IActionResult HttpStatusCodeHandler(int statusCode)
         {
 
             //If you are using UseStatusCodePagesWithReExecute middleware, it's also possible to 
             // Retrieve the exception Details and get the original path in the ErrorController using
             // IStatusCodeReExecuteFeature interface as shown below:
-<<<<<<< HEAD
             var statusCodeResult = HttpContext.Features.Get<IStatusCodeReExecuteFeature>();
-=======
-            var statusCodeResult =HttpContext.Features.Get<IStatusCodeReExecuteFeature>();
->>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
 
 
             switch (statusCode)
@@ -84,11 +58,7 @@ namespace Books_Store.Controllers
 
                     break;
 
-<<<<<<< HEAD
 
-=======
-             
->>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
             }
 
 
@@ -173,11 +143,7 @@ namespace Books_Store.Controllers
 
 
 
-<<<<<<< HEAD
         // 3-test
-=======
-       // 3-test
->>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
         [AllowAnonymous]
         [Route("Error/test")]
         public void test()

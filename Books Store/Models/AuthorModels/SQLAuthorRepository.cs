@@ -1,8 +1,4 @@
 ﻿using Books_Store.Models.EF_Core_DB_Models;
-<<<<<<< HEAD
-=======
-using Microsoft.EntityFrameworkCore;
->>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
 
 namespace Books_Store.Models.AuthorModels
 {
@@ -91,13 +87,8 @@ namespace Books_Store.Models.AuthorModels
         {
             IEnumerable<Author> searchResult = myDbContext.Authors
                 //.Include(author => author.Name)//Name property is string not list, so we cant use include 
-<<<<<<< HEAD
                 .Where(author => author.Name.Contains(searchTerm));
 
-=======
-                .Where(author=>author.Name.Contains(searchTerm));   
-            
->>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
             return searchResult;
         }
         #endregion
