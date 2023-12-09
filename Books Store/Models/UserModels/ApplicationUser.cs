@@ -1,9 +1,4 @@
 ﻿using Microsoft.AspNetCore.Identity;
-<<<<<<< HEAD
-=======
-using Microsoft.EntityFrameworkCore.Migrations;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
->>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
 
 namespace Books_Store.Models.UserModels
 {
@@ -26,11 +21,7 @@ namespace Books_Store.Models.UserModels
         static public TimeSpan UserExpireTimeSpan { get; set; }
 
 
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
 
     }
 }

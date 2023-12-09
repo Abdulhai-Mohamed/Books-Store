@@ -3,25 +3,6 @@ using Books_Store.Models.UserModels;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-<<<<<<< HEAD
-=======
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Microsoft.VisualStudio.Web.CodeGeneration.Utils;
-using NuGet.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Data.Common;
-using System.Reflection.Metadata;
-using System.Runtime.Intrinsics.X86;
-using System.Security.AccessControl;
-using System.Security.Cryptography;
-using System.Security.Cryptography.Xml;
-using System.Security.Policy;
-using System.Security.Principal;
-using System.Xml;
->>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
 
 namespace Books_Store.Models.EF_Core_DB_Models
 {
@@ -50,11 +31,7 @@ namespace Books_Store.Models.EF_Core_DB_Models
         //DbContext class needs an instance of the DbContextOptions class.
         //The DbContextOptions instance carries configuration information such as the connection string, database provider to use etc.
         //To pass the DbContextOptions instance we pass it to the DbContext constructor by using base().
-<<<<<<< HEAD
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options)
-=======
-        public MyDbContext(DbContextOptions<MyDbContext> options): base(options)
->>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
         {
 
         }
@@ -69,11 +46,7 @@ namespace Books_Store.Models.EF_Core_DB_Models
         public DbSet<Author> Authors { get; set; }
 
 
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
 
 
 
@@ -136,11 +109,7 @@ namespace Books_Store.Models.EF_Core_DB_Models
             //To achieve this, modify foreign keys DeleteBehavior to Restrict. We do this in OnModelCreating() method
             //of AppDbContext class:
 
-<<<<<<< HEAD
             IEnumerable<IMutableForeignKey> ForeignKeys =
-=======
-            IEnumerable<IMutableForeignKey> ForeignKeys = 
->>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
                 modelBuilder.Model.GetEntityTypes().SelectMany(e => e.GetForeignKeys());
 
             foreach (IMutableForeignKey FK in ForeignKeys)
@@ -148,7 +117,6 @@ namespace Books_Store.Models.EF_Core_DB_Models
                 FK.DeleteBehavior = DeleteBehavior.Restrict;
             }
 
-<<<<<<< HEAD
             //ALTER TABLE [AspNetUserRoles] ADD CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE NO ACTION;
             //ALTER TABLE [AspNetUserRoles] ADD CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE NO ACTION;
 
@@ -156,15 +124,6 @@ namespace Books_Store.Models.EF_Core_DB_Models
             //SqlException: The DELETE statement conflicted with the REFERENCE constraint
             //"FK_AspNetUserRoles_AspNetUsers_UserId".The conflict occurred in database "BookStoreDB",
             //table "dbo.AspNetUserRoles", column 'UserId'.
-=======
-        //ALTER TABLE [AspNetUserRoles] ADD CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE NO ACTION;
-        //ALTER TABLE [AspNetUserRoles] ADD CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE NO ACTION;
-
-        //Now if ypu try delete role has users or user that inside a role => 
-        //SqlException: The DELETE statement conflicted with the REFERENCE constraint
-        //"FK_AspNetUserRoles_AspNetUsers_UserId".The conflict occurred in database "BookStoreDB",
-        //table "dbo.AspNetUserRoles", column 'UserId'.
->>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
 
 
 

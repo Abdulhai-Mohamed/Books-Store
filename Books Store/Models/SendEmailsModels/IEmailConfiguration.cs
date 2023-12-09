@@ -1,23 +1,4 @@
-<<<<<<< HEAD
-﻿namespace Books_Store.Models.SendEmailsModels
-=======
-﻿using Microsoft.AspNetCore.Hosting.Server;
-using static System.Net.Mime.MediaTypeNames;
-using System;
-using NuGet.Configuration;
-using NuGet.Protocol.Plugins;
-using System.Net;
-using System.Security.Cryptography.Xml;
-using System.Text;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
-using System.Runtime.Intrinsics.X86;
-using Microsoft.AspNetCore.HttpOverrides;
-using Microsoft.Identity.Client.Platforms.Features.DesktopOs.Kerberos;
-using System.Configuration;
-using Newtonsoft.Json.Linq;
-
 namespace Books_Store.Models.SendEmailsModels
->>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
 {
     //1- 
     //Mail clients vs Mail server
@@ -43,11 +24,7 @@ namespace Books_Store.Models.SendEmailsModels
 
     //2-
     //SMTP (Simple Mail Transfer Protocol)
-<<<<<<< HEAD
     //SMTP(Simple Mail Transfer Protocol) is a protocol used to send email messages over the internet.
-=======
-    //MTP(Simple Mail Transfer Protocol) is a protocol used to send email messages over the internet.
->>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
     //It is typically used by mail clients (such as Microsoft Outlook) or mail servers(such as Microsoft Exchange)
     //to send email messages to other mail servers, which then deliver the messages to their intended recipients.
     //When you configure your mail client or server to send email messages, you typically need to specify
@@ -134,7 +111,6 @@ namespace Books_Store.Models.SendEmailsModels
 
 
 
-<<<<<<< HEAD
     //5-
     //Google stopped allowing apps logging in to Gmail using real password
 
@@ -153,10 +129,6 @@ namespace Books_Store.Models.SendEmailsModels
     //enter image description here
 
     //After this, use that 16 digit
-=======
-
-
->>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
 
 
 
@@ -170,11 +142,7 @@ namespace Books_Store.Models.SendEmailsModels
         string SmtpServer { get; }
         int SmtpPort { get; }
 
-<<<<<<< HEAD
         //your credentials to sent over SMTP
-=======
-        //credentials to sent over SMTP
->>>>>>> 38aec3c05e6ff1c9759294c787b8a0d08a70b7d4
         string SmtpUsername { get; }
         string SmtpPassword { get; }
 
